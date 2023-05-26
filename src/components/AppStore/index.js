@@ -317,7 +317,7 @@ class AppStore extends Component {
   getActiveTabApps = searchedApps => {
     const {activeTabId} = this.state
     const filteredApps = searchedApps.filter(
-      (eachSearchApp = eachSearchApp.category === activeTabId),
+      eachSearchApp => eachSearchApp.category === activeTabId,
     )
 
     return filteredApps
@@ -350,7 +350,7 @@ class AppStore extends Component {
             />
             <img
               src={SEARCH_ICON_URL}
-              alt="search-icon"
+              alt="search icon"
               className="search-icon"
             />
           </div>
